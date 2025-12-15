@@ -7,7 +7,6 @@ You can add , edit or delete them but there are some rules here : You cannot edi
 
 This project is very useful and functional for manage school/university
 
----
 
 
 ## Structurs
@@ -20,6 +19,7 @@ This project is very useful and functional for manage school/university
      ##### properties of this class are id , name , unites , and scores
   - #### Classroom:
      ##### properties of this class are id , name , course , teacher , and students
+
 
 
 ## Instruction
@@ -52,3 +52,5 @@ If you select `select student` and enter the corresponding studebt ID this menu 
 4.set scores
 0.back
 ```
+you can open the other menues in the same way and use their features as well.
+
