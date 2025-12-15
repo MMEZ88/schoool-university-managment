@@ -43,7 +43,7 @@ For example if you select `students` this menu will open , allowing you to add, 
 5.select student
 0.back
 ```
-If you select `select student` and enter the corresponding studebt ID this menu will open, allowing you to manage matters related to the student's courses and scores :
+If you select `select student` and enter the corresponding student ID this menu will open, allowing you to manage matters related to the student's courses and scores :
 
 ```
 1.info
