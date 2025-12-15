@@ -1,8 +1,10 @@
 # School/University managment system
 
 This is a project for school/university managment system that let you manage studnets , teachers , courses and classrooms .
-You can add , edit or delet them but there are some rules here : You cannot edit or delet some methods for example; If a coures rigested for a student,it cant be removed that and...
-You can save and load data from data.json file.
+You can save and load data from data.json file .
+You can add , edit or delete them but there are some rules here : You cannot edit or delete some methods for example; If a course rigested for a student , it cannot be removed that and...
+
+
 This project is very useful and functional for manage school/university
 
 ---
