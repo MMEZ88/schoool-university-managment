@@ -52,5 +52,5 @@ If you select `select student` and enter the corresponding studebt ID this menu 
 4.set scores
 0.back
 ```
-you can open the other menues in the same way and use their features as well.
+You can open the other menues in the same way and use their features as well.
 
