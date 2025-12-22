@@ -65,6 +65,13 @@ class Classroom:
     def __eq__ (self,other):
         return self.id==other.id
 
+def get_int(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Error: Please enter a valid number")
+
 students=[]
 teachers=[]
 courses=[]
@@ -72,6 +79,7 @@ classrooms=[]
 selected_student_index=-1
 selected_teacher_index=-1
 selected_classroom_index=-1
+exit_check=False
 
 
 with open("data.json","rt") as f1:
@@ -136,7 +144,7 @@ level="root"
 while True:
     if level=="root":
         print("1.students\n2.teachers\n3.courses\n4.classrooms\n5.save\n0.exit")
-        cmd= int(input(">>"))
+        cmd= get_int(">>")
         if cmd==1:
             level="students"
         elif cmd==2:
@@ -145,16 +153,17 @@ while True:
             level="courses"       
         elif cmd==4:
             level="classrooms"        
-        elif cmd==5:
+        elif cmd ==5 :
             level="save"
         elif cmd==0:
-            break
+            level="exit"
+
 
     elif level=="students":
         print("1.add student\n2.edit student\n3.delete student\n4.view students\n5.select student\n0.back")
-        cmd= int(input(">>"))
+        cmd= get_int(">>")
         if cmd==1:
-            id=int(input("id: "))
+            id=get_int("id: ")
             name=str(input("name: "))
             family=str(input("family: "))
             s1=Student(id,name,family)
@@ -165,7 +174,7 @@ while True:
         elif cmd==2:
             for student in students:
                 print(student)
-            id=int(input("id: "))
+            id=get_int("id: ")
             s1=Student(id,"","")
             if s1 in students:
                 students.remove(s1)
@@ -178,7 +187,7 @@ while True:
         elif cmd==3:
             for student in students:
                 print(student)
-            id=int(input("id: "))
+            id=get_int("id: ")
             s1=Student(id,"","")
             if s1 in students:
                 check_classroom=[False if s1 in classroom.students else True for classroom in classrooms]
@@ -194,7 +203,7 @@ while True:
         elif cmd==5:
             for student in students:
                 print(student)
-            id=int(input("id: "))
+            id=get_int("id: ")
             s1=Student(id,"","")
             if s1 in students:
                 selected_student_index=students.index(s1)
@@ -206,9 +215,9 @@ while True:
 
     elif level=="teachers":
         print("1.add teacher\n2.edit teacher\n3.delete teacher\n4.view teachers\n5.select teacher\n0.back")
-        cmd= int(input(">>"))
+        cmd= get_int(">>")
         if cmd==1: 
-            id=int(input("id: "))
+            id=get_int("id: ")
             name=str(input("name: "))
             family=str(input("family: "))
             grade=str(input("grade: "))
@@ -220,7 +229,7 @@ while True:
         elif cmd==2:
             for teacher in teachers:
                 print(teacher)
-            id=int(input("id: "))
+            id=get_int("id: ")
             t1=Teacher(id,"","","")
             if t1 in teachers:
                 teachers.remove(t1)
@@ -234,7 +243,7 @@ while True:
         elif cmd==3:
             for teacher in teachers:
                 print(teacher)
-            id=int(input("id: "))
+            id=get_int("id: ")
             t1=Teacher(id,"","","")
             if t1 in teachers:
                 print(teachers[teachers.index(t1)])
@@ -251,7 +260,7 @@ while True:
         elif cmd==5:
             for teacher in teachers:
                 print(teacher)
-            id=int(input("id: "))
+            id=get_int("id: ")
             t1=Teacher(id,"","","")
             if t1 in teachers:
                 selected_teacher_index=teachers.index(t1)
@@ -263,11 +272,11 @@ while True:
         
     elif level=="courses":
         print("1.add course\n2.edit course\n3.delete course\n4.view courses\n0.back")
-        cmd= int(input(">>"))
+        cmd= get_int(">>")
         if cmd==1:
-            id=int(input("id: "))
+            id=get_int("id: ")
             name=str(input("name: "))
-            units=int(input("units: "))
+            units=get_int("units: ")
             c1=Course(id,name,units)
             print(c1)
             if c1 in courses:
@@ -277,12 +286,12 @@ while True:
         elif cmd==2:
             for course in courses:
                 print(course)
-            id=int(input("id: "))
+            id=get_int("id: ")
             c1=Course(id,"","")
             if c1 in courses:
                 courses.remove(c1)
                 name=str(input("name: "))
-                units=int(input("units: "))
+                units=get_int("units: ")
                 c1=Course(id,name,units)
                 courses.append(c1)
             else:
@@ -290,7 +299,7 @@ while True:
         elif cmd==3:
             for course in courses:
                 print(course)
-            id=int(input("id: "))
+            id=get_int("id: ")
             c1=Course(id,"","")
             if c1 in courses:
                 check_student=[False if c1 in student.courses else True for student in students ]
@@ -316,13 +325,13 @@ while True:
 
     elif level=="classrooms":
         print("1.add classroom\n2.edit classroom\n3.delete classroom\n4.view classrooms\n5.select classroom\n0.back")
-        cmd= int(input(">>"))
+        cmd= get_int(">>")
         if cmd==1:
-            id=int(input("id: "))
+            id=get_int("id: ")
             name=str(input("name: "))
             for course in courses:
                 print(course)
-            id_course=int(input("id course: "))
+            id_course=get_int("id course: ")
             c1=Course(id_course,"","")
             if c1 in courses:
                 course=courses[courses.index(c1)]
@@ -332,7 +341,7 @@ while True:
             for teacher in teachers:
                 if c1 in teacher.courses:
                     print(teacher)
-            id_teacher=int(input("id teacher: "))
+            id_teacher=get_int("id teacher: ")
             t1=Teacher(id_teacher,"","","")
             if t1 in teachers:
                 teacher=teachers[teachers.index(t1)]
@@ -344,7 +353,7 @@ while True:
                     print(student)
             students_classroom=[]
             while True:
-                id_student=int(input("id student: "))
+                id_student=get_int("id student: ")
                 s1=Student(id_student,"","")
                 if id_student==0:
                     break
@@ -359,7 +368,7 @@ while True:
         elif cmd==2:
             for classroom in classrooms:
                 print(classroom)
-            id=int(input("id: "))
+            id=get_int("id: ")
             c1=Classroom(id,"","","",[])
             if c1 in classrooms:
                 name=str(input("new name: "))
@@ -369,7 +378,7 @@ while True:
         elif cmd==3:
             for classroom in classrooms:
                 print(classroom)
-            id=int(input("id: "))
+            id=get_int("id: ")
             c1=Classroom(id,"","","",[])
             if c1 in classrooms:    
                 classrooms.remove(c1)
@@ -381,7 +390,7 @@ while True:
         elif cmd==5:
             for classroom in classrooms:
                 print(classroom)
-            id=int(input("id: "))
+            id=get_int("id: ")
             c1=Classroom(id,"","","",[])  
             if c1 in classrooms:
                 level="select_classroom"
@@ -448,13 +457,16 @@ while True:
         with open ("data.json","wt") as f1:
             d1=json.dumps(data)
             f1.write(d1)
-        
-        level="root"
+
+        if exit_check:
+            break
+        else:
+            level="root"
 
     elif level=="student_select":
         s1=students[selected_student_index]
         print("1.info\n2.add course\n3.delet course\n4.set scores\n0.back")
-        cmd= int(input(">>"))
+        cmd= get_int(">>")
         if cmd==1:
             print(s1)
             print("courses:")
@@ -463,7 +475,7 @@ while True:
         elif cmd==2:
             for course in courses:
                 print(course)
-            id=int(input("id: "))
+            id=get_int("id: ")
             c1=Course(id,"",0)
             if c1 in courses:
                 course_index=courses.index(c1)
@@ -473,7 +485,7 @@ while True:
         elif cmd==3:
             for course in s1.courses:
                 print(course)
-            id=int(input("id: "))
+            id=get_int("id: ")
             c1=Course(id,"",0)
             if c1 in s1.courses:
                 s1.courses.remove(c1)
@@ -483,15 +495,19 @@ while True:
             for crs in s1.courses:
                 if crs.score<10:
                     print(crs)
-                    score=int(input("score:"))
-                    crs.score=score
+                    try:
+                        score=float(input("score:"))
+                    except ValueError:
+                        print("Error: Invalid number entered")
+                    else:
+                        crs.score=score
         elif cmd==0:
             level="students"
     
     elif level=="teacher_select":
         t1=teachers[selected_teacher_index]
         print("1.info\n2.add course\n3.delet course\n0.back")
-        cmd= int(input(">>"))
+        cmd= get_int(">>")
         if cmd==1:
             print(t1)
             print("courses:")
@@ -500,7 +516,7 @@ while True:
         elif cmd==2:
             for course in courses:
                 print(course)
-            id=int(input("id: "))
+            id=get_int("id: ")
             c1=Course(id,"",0)
             if c1 in courses:
                 course_index=courses.index(c1)
@@ -510,7 +526,7 @@ while True:
         elif cmd==3:
             for course in t1.courses:
                 print(course)
-            id=int(input("id: "))
+            id=get_int("id: ")
             c1=Course(id,"",0)
             if c1 in t1.courses:
                 t1.courses.remove(c1)
@@ -522,7 +538,7 @@ while True:
     elif level=="select_classroom":
         classroom=classrooms[selected_classroom_index]
         print("1.view info\n2.chang course\n3.change teacher\n4.add student\n5.remove student\n0.back")
-        cmd= int(input(">>"))
+        cmd= get_int(">>")
         if cmd==1:
             print(f"id: {classroom.id}\nTeacher: {classroom.teacher}\ncourse: {classroom.course}\nStudents:")
             for s1 in classroom.students:
@@ -532,7 +548,7 @@ while True:
             for c2 in courses:
                 if c2!=classroom.course:
                     print(c2)
-            id_course=int(input("id course: "))
+            id_course=get_int("id course: ")
             c1=Course(id_course,"",0)
             if c1 in courses:
                 course=courses[courses.index(c1)]
@@ -550,7 +566,7 @@ while True:
             for t1 in teachers:
                 if classroom.course in t1.courses and (not(classroom.teacher) or classroom.teacher!=t1):
                     print(t1)
-            id_teacher=int(input("id teacher: "))
+            id_teacher=get_int("id teacher: ")
             t1=Teacher(id_teacher,"","","")
             if t1 in teachers:
                 teacher=teachers[teachers.index(t1)]
@@ -561,7 +577,7 @@ while True:
             for student in students:
                 if not(student in classroom.students) and classroom.course in student.courses and student.courses[student.courses.index(classroom.course)].score<10:
                     print(student)
-            id_student=int(input("id student: "))
+            id_student=get_int("id student: ")
             s1=Student(id_student,"","")
             if s1 in students:
                 classroom.students.append(students[students.index(s1)])
@@ -570,7 +586,7 @@ while True:
         elif cmd==5:
             for student in classroom.students:
                 print(student)
-            id_student=int(input("id student: "))
+            id_student=get_int("id student: ")
             s1=Student(id_student,"","")
             if s1 in classroom.students:
                 classroom.students.remove(s1)
@@ -578,3 +594,12 @@ while True:
                 print("not found")
         elif cmd==0:
             level="classrooms"
+ 
+    elif level=="exit":
+        print("Would you like to save your changes before exiting? (y/n)")
+        cmd=input(">>")
+        if cmd == "y" or cmd=="Y":
+            level="save"
+            exit_check=True
+        elif cmd=="n" or cmd=="N":
+            break
