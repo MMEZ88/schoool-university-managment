@@ -337,7 +337,10 @@ while True:
             level="root"
 
     elif level=="classrooms":
-        print("1.add classroom\n2.edit classroom\n3.delete classroom\n4.view classrooms\n5.select classroom\n0.back")
+        menues=["1.add classroom","2.edit classroom","3.delete classroom","4.view classrooms","5.select classroom","0.back"]
+        for menu in menues :
+            time.sleep(0.1)
+            print(menu)
         cmd= get_int(">>")
         if cmd==1:
             id=get_int("id: ")
