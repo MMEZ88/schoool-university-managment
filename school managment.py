@@ -559,7 +559,10 @@ while True:
     
     elif level=="select_classroom":
         classroom=classrooms[selected_classroom_index]
-        print("1.view info\n2.chang course\n3.change teacher\n4.add student\n5.remove student\n0.back")
+        menus=["1.view info","2.chang course","3.change teacher","4.add student","5.remove student","0.back"]
+        for menu in menus :
+            time.sleep(0.1)
+            print(menu)
         cmd= get_int(">>")
         if cmd==1:
             print(f"id: {classroom.id}\nTeacher: {classroom.teacher}\ncourse: {classroom.course}\nStudents:")
