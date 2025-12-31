@@ -179,7 +179,7 @@ while True:
             s1=Student(id,name,family)
             if s1 in students:
                 print("alredy exits")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
             else:
                 students.append(s1)
         elif cmd==2:
@@ -195,7 +195,7 @@ while True:
                 students.append(s1)
             else:
                 print("doesnt exits")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==3:
             for student in students:
                 print(student)
@@ -207,14 +207,14 @@ while True:
                     students.remove(s1)
                 else:
                     print("cannot delete")
-                    input("press Enter to return to the previous menu")
+                    input("press Enter to return to the previous menu... ")
             else:
                 print("doesnt exits")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==4:
             for student in students:
                 print(student)
-            input("press Enter to continue")
+            input("press Enter to continue... ")
         elif cmd==5:
             for student in students:
                 print(student)
@@ -225,7 +225,7 @@ while True:
                 level="student_select"
             else:
                 print("doesnt exits")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==0:
             level="root"
 
@@ -243,7 +243,7 @@ while True:
             s1=Teacher(id,name,family,grade)
             if s1 in teachers:
                 print("alredy exits")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
             else:
                 teachers.append(s1)
         elif cmd==2:
@@ -260,7 +260,7 @@ while True:
                 teachers.append(t1)
             else:
                 print("doesnt exits")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==3:
             for teacher in teachers:
                 print(teacher)
@@ -272,14 +272,14 @@ while True:
                     teachers.remove(t1)
                 else:
                     print("cannot delete")
-                    input("press Enter to return to the previous menu")
+                    input("press Enter to return to the previous menu... ")
             else:
                 print("doesnt exits")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==4:
             for teacher in teachers:
                 print(teacher)
-            input("press Enter to continue")
+            input("press Enter to continue... ")
         elif cmd==5:
             for teacher in teachers:
                 print(teacher)
@@ -290,7 +290,7 @@ while True:
                 level="teacher_select"
             else:
                 print("doesnt exits")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==0:
             level="root"
         
@@ -307,7 +307,7 @@ while True:
             c1=Course(id,name,units)
             if c1 in courses:
                 print("alredy exits")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
             else:
                 courses.append(c1)
         elif cmd==2:
@@ -323,7 +323,7 @@ while True:
                 courses.append(c1)
             else:
                 print("doesnt exits")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==3:
             for course in courses:
                 print(course)
@@ -339,20 +339,20 @@ while True:
                             courses.remove(c1)
                         else:
                             print("cannot delete")
-                            input("press Enter to return to the previous menu")
+                            input("press Enter to return to the previous menu... ")
                     else:
                         print("cannot delete")
-                        input("press Enter to return to the previous menu")
+                        input("press Enter to return to the previous menu... ")
                 else:
                     print("cannot delete")
-                    input("press Enter to return to the previous menu")
+                    input("press Enter to return to the previous menu... ")
             else:
                 print("does not exit")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==4:
             for course in courses:
                 print(course)
-            input("press Enter to continue")
+            input("press Enter to continue... ")
         elif cmd==0:
             level="root"
 
@@ -421,11 +421,11 @@ while True:
                 classrooms.remove(c1)
             else:
                 print("not found")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==4:
             for c1 in classrooms:
                 print(f"\nClassroom:\n{c1}\ncourse:\t{c1.course}")
-            input("press Enter to continue")
+            input("press Enter to continue... ")
         elif cmd==5:
             for classroom in classrooms:
                 print(classroom)
@@ -514,7 +514,7 @@ while True:
             print("courses:")
             for course in s1.courses:
                 print(f"{course}\t{course.score}")
-            input("press Enter to continue")
+            input("press Enter to continue... ")
         elif cmd==2:
             for course in courses:
                 print(course)
@@ -525,7 +525,7 @@ while True:
                 s1.courses.append(courses[course_index])
             else:
                 print("not found")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==3:
             for course in s1.courses:
                 print(course)
@@ -535,7 +535,7 @@ while True:
                 s1.courses.remove(c1)
             else:
                 print("not found")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==4:
             for crs in s1.courses:
                 if crs.score<10:
@@ -547,7 +547,7 @@ while True:
                     else:
                         crs.score=score
                     finally :
-                        input("press Enter to continue")
+                        input("press Enter to continue... ")
         elif cmd==0:
             level="students"
     
@@ -563,7 +563,7 @@ while True:
             print("courses:")
             for course in t1.courses:
                 print(course)
-            input("press Enter to continue")
+            input("press Enter to continue... ")
         elif cmd==2:
             for course in courses:
                 print(course)
@@ -574,7 +574,7 @@ while True:
                 t1.courses.append(courses[course_index])
             else:
                 print("not found")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==3:
             for course in t1.courses:
                 print(course)
@@ -584,7 +584,7 @@ while True:
                 t1.courses.remove(c1)
             else:
                 print("not found")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==0:
             level="teachers"
     
@@ -599,7 +599,7 @@ while True:
             print(f"id: {classroom.id}\nTeacher: {classroom.teacher}\ncourse: {classroom.course}\nStudents:")
             for s1 in classroom.students:
                 print(s1)
-            input("press Enter to continue")
+            input("press Enter to continue... ")
         elif cmd==2:
             classroom=classrooms[selected_classroom_index]
             for c2 in courses:
@@ -619,7 +619,7 @@ while True:
                 classroom.students=stds
             else:
                 print("does not exist")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==3:
             for t1 in teachers:
                 if classroom.course in t1.courses and (not(classroom.teacher) or classroom.teacher!=t1):
@@ -631,7 +631,7 @@ while True:
                 classroom.teacher=teacher
             else:
                 print("does not exist")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==4:
             for student in students:
                 if not(student in classroom.students) and classroom.course in student.courses and student.courses[student.courses.index(classroom.course)].score<10:
@@ -642,7 +642,7 @@ while True:
                 classroom.students.append(students[students.index(s1)])
             else:
                 print("not found")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==5:
             for student in classroom.students:
                 print(student)
@@ -652,7 +652,7 @@ while True:
                 classroom.students.remove(s1)
             else:
                 print("not found")
-                input("press Enter to return to the previous menu")
+                input("press Enter to return to the previous menu... ")
         elif cmd==0:
             level="classrooms"
  
