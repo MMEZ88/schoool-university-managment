@@ -144,8 +144,8 @@ for classroom in data["Classrooms"]:
 level="root"
 while True:
     if level=="root":
-        menues=["1.students","2.teachers","3.courses","4.classrooms","5.save","0.exit"]
-        for menu in menues :
+        menus=["1.students","2.teachers","3.courses","4.classrooms","5.save","0.exit"]
+        for menu in menus :
             time.sleep(0.1)
             print(menu)
         cmd= get_int(">>")
@@ -164,8 +164,8 @@ while True:
 
 
     elif level=="students":
-        menues=["1.add student","2.edit student","3.delete student","4.view students","5.select student","0.back"]
-        for menu in menues :
+        menus=["1.add student","2.edit student","3.delete student","4.view students","5.select student","0.back"]
+        for menu in menus :
             time.sleep(0.1)
             print(menu)
         cmd= get_int(">>")
@@ -221,8 +221,8 @@ while True:
             level="root"
 
     elif level=="teachers":
-        menues=["1.add teacher","2.edit teacher","3.delete teacher","4.view teachers","5.select teacher","0.back"]
-        for menu in menues :
+        menus=["1.add teacher","2.edit teacher","3.delete teacher","4.view teachers","5.select teacher","0.back"]
+        for menu in menus :
             time.sleep(0.1)
             print(menu)
         cmd= get_int(">>")
@@ -281,8 +281,8 @@ while True:
             level="root"
         
     elif level=="courses":
-        menues=["1.add course","2.edit course","3.delete course","4.view courses","0.back"]
-        for menu in menues :
+        menus=["1.add course","2.edit course","3.delete course","4.view courses","0.back"]
+        for menu in menus :
             time.sleep(0.1)
             print(menu)
         cmd= get_int(">>")
@@ -337,8 +337,8 @@ while True:
             level="root"
 
     elif level=="classrooms":
-        menues=["1.add classroom","2.edit classroom","3.delete classroom","4.view classrooms","5.select classroom","0.back"]
-        for menu in menues :
+        menus=["1.add classroom","2.edit classroom","3.delete classroom","4.view classrooms","5.select classroom","0.back"]
+        for menu in menus :
             time.sleep(0.1)
             print(menu)
         cmd= get_int(">>")
@@ -481,7 +481,7 @@ while True:
 
     elif level=="student_select":
         s1=students[selected_student_index]
-        print("1.info\n2.add course\n3.delet course\n4.set scores\n0.back")
+        menus=["1.info","2.add course","3.delet course","4.set scores","`0.back"]
         cmd= get_int(">>")
         if cmd==1:
             print(s1)
