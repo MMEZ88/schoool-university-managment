@@ -164,7 +164,10 @@ while True:
 
 
     elif level=="students":
-        print("1.add student\n2.edit student\n3.delete student\n4.view students\n5.select student\n0.back")
+        menues=["1.add student","2.edit student","3.delete student","4.view students","5.select student","0.back"]
+        for menu in menues :
+            time.sleep(0.1)
+            print(menu)
         cmd= get_int(">>")
         if cmd==1:
             id=get_int("id: ")
