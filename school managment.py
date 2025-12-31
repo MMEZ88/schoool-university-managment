@@ -525,7 +525,10 @@ while True:
     
     elif level=="teacher_select":
         t1=teachers[selected_teacher_index]
-        print("1.info\n2.add course\n3.delet course\n0.back")
+        menus=["1.info","2.add course","3.delet course","0.back"]
+        for menu in menus :
+            time.sleep(0.1)
+            print(menu)
         cmd= get_int(">>")
         if cmd==1:
             print(t1)
