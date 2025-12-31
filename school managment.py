@@ -596,7 +596,7 @@ while True:
             level="classrooms"
  
     elif level=="exit":
-        print("Would you like to save your changes before exiting? (y/n)")
+        print("Would you like to save your changes before exiting? (Y/n)")
         cmd=input(">>")
         if cmd == "y" or cmd=="Y":
             level="save"
